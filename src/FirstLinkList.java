@@ -35,19 +35,17 @@ public class FirstLinkList {
     }
     void delete() {
         Node node = new Node();
-        Node prevNode = new Node();
+        Node prevNode = null;
         node = head;
-        prevNode = node;
         if(node == null) {
             System.out.println("This is an empty list");
         }
         else {
             while(node.next != null) {
-                prevNode.next = node;
+                prevNode = node;
                 node = node.next;
             }
             prevNode.next = null;
-            System.out.println(node);
         }
     }
     void show() {
@@ -57,10 +55,10 @@ public class FirstLinkList {
         }
         else {
             while(node.next != null) {
-                System.out.println(node.data);
+                System.out.print(node.data + "->");
                 node = node.next;
             }
-            System.out.println(node.data);
+            System.out.print(node.data);
         }
 
     }
@@ -76,10 +74,13 @@ public class FirstLinkList {
         list.insertAtBeginning(100);
 
         list.show();
+        System.out.println();
         list.deleteAtBeginning();
         list.show();
+        System.out.println();
         list.delete();
         list.show();
+        System.out.println();
         list.delete();
         list.show();
     }
