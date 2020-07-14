@@ -22,6 +22,22 @@ public class SinglyLinkedList {
             head = node;
         }
     }
+    void insertAt(int data, int key) {
+        Node node = head;
+        Node n = new Node();
+        n.data = data;
+        if(node == null) System.out.println("List is empty");
+        else {
+            while(node.next != null && node.data != key) {
+                node = node.next;
+            }
+            if(node.data == key) {
+                n.next = node.next;
+                node.next = n;
+            }
+            else System.out.println("Key not found");
+        }
+    }
     void deleteAtBeginning() {
         Node node = head;
         if(node == null) {
@@ -46,6 +62,23 @@ public class SinglyLinkedList {
             prevNode.next = null;
         }
     }
+    void deleteAt(int key) {
+        Node node = head;
+        Node prevNode = head;
+        if(node == null) System.out.println("This is empty list");
+        else {
+            while(node.next != null && node.data != key) {
+                prevNode = node;
+                node = node.next;
+            }
+            if(prevNode == head) {
+                head = head.next;
+            }
+            if(node.data == key) {
+                prevNode.next = node.next;
+            }
+        }
+    }
     void show() {
         Node node = head;
         if(head == null) {
@@ -66,11 +99,15 @@ public class SinglyLinkedList {
         list.insert(10);
         list.insert(15);
         list.insert(20);
+        list.show();
         list.insert(30);
         list.insert(50);
+        System.out.println();
+        list.show();
         list.insertAtBeginning(200);
         list.insertAtBeginning(100);
 
+        System.out.println();
         list.show();
         System.out.println();
         list.deleteAtBeginning();
@@ -80,6 +117,25 @@ public class SinglyLinkedList {
         list.show();
         System.out.println();
         list.delete();
+        list.show();
+        list.insertAt(55,10);
+        System.out.println();
+        list.show();
+        list.insertAt(23,15);
+        list.insertAt(125,55);
+        System.out.println();
+        list.show();
+        list.deleteAt(125);
+        System.out.println();
+        list.show();
+        list.deleteAt(200);
+        System.out.println();
+        list.show();
+        list.deleteAt(20);
+        System.out.println();
+        list.show();
+        list.insertAt(333, 10);
+        System.out.println();
         list.show();
     }
 }
