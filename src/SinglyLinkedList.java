@@ -1,4 +1,4 @@
-public class FirstLinkList {
+public class SinglyLinkedList {
     Node head;
     void insert(int data) {
         Node n = new Node();
@@ -23,8 +23,7 @@ public class FirstLinkList {
         }
     }
     void deleteAtBeginning() {
-        Node node = new Node();
-        node = head;
+        Node node = head;
         if(node == null) {
             System.out.println("This is an empty link");
         }
@@ -34,9 +33,8 @@ public class FirstLinkList {
         }
     }
     void delete() {
-        Node node = new Node();
+        Node node = head;
         Node prevNode = null;
-        node = head;
         if(node == null) {
             System.out.println("This is an empty list");
         }
@@ -64,7 +62,7 @@ public class FirstLinkList {
     }
 
     public static void main(String[] args) {
-        FirstLinkList list = new FirstLinkList();
+        SinglyLinkedList list = new SinglyLinkedList();
         list.insert(10);
         list.insert(15);
         list.insert(20);
