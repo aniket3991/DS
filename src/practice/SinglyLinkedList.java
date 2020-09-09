@@ -1,3 +1,5 @@
+package practice;
+
 public class SinglyLinkedList {
     Node head;
     void insert(int data) {
